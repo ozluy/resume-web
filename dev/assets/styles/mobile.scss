@@ -1,0 +1,120 @@
+@import 'saz';
+@import 'globals';
+@media screen and (max-width:750px){
+
+  body{
+    width: 100%;
+  }
+
+}
+@media screen and (max-width:600px){
+  aside{
+    z-index: 2;
+    top:44px;
+    @include transition(all 400ms ease-in-out);
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    @include transform(translateX(- 270px));
+    &.opened{
+      overflow-y: scroll;
+      overflow-x: hidden;
+      bottom:0;
+      @include transform(translateX(0));
+      opacity: 1;
+      visibility: visible;
+
+    }
+  }
+
+  body{
+    width: 100%;
+  }
+  main{
+    margin-top:44px;
+    @include transition(all 400ms ease-in-out);
+    width:100%;
+    &.translated{
+      @include transform(translateX(270px));
+    }
+  }
+  header{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    button.hamburger{
+      display: block;
+      float: left;
+      height: 100%;
+      width: 22.5px;
+      border:none;
+      outline: none;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      &.clicked{
+        span{
+
+          &:nth-child(1){
+            left:2.5px;
+            @include transform(rotate(45deg));
+          }
+          &:nth-child(2){
+            @include transform(rotate(-45deg));
+          }
+          &:nth-child(3){
+            left:2.5px;
+            top:24px;
+            @include transform(rotate(-45deg));
+          }
+          &:nth-child(4){
+            top:24px;
+            @include transform(rotate(45deg));
+          }
+        }
+      }
+      span{
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        width: 50%;
+        height: 2px;
+        left:0;
+        background-color: $color_white;
+        @include transition(all 400ms ease-in-out);
+        &:nth-child(odd){
+          border-radius:3px 0 0 3px;
+        }
+        &:nth-child(even){
+          border-radius:0 3px 3px 0 ;
+          left:50%;
+        }
+        &:nth-child(1){
+          top:16px;
+        }
+        &:nth-child(2){
+          top:16px;
+        }
+        &:nth-child(3){
+          top:26px;
+        }
+        &:nth-child(4){
+          top:26px;
+        }
+
+      }
+    }
+  }
+  footer{
+    @include transition(all 400ms ease-in-out);
+    &.translated{
+      @include transform(translateX(270px));
+    }
+  }
+  .printer{
+    display: none;
+  }
+}

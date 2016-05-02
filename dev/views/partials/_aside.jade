@@ -1,0 +1,28 @@
+include ./_mixins.jade
+aside#left_menu
+  div.row
+    div.avatar-shell
+      img(class='avatar', src="./assets/img/ozluy.jpg")
+  div.row
+    ul.about-group
+      +aside_group_item('', 'Yusuf Özlü')
+      +aside_group_item('envelope', 'Email','ozluyusuf@gmail.com')
+      +aside_group_item('phone', 'Phone','+90 536 488 3404')
+      +aside_group_item('birthday-cake', 'Birth Date', '30/05/1991')
+      +aside_group_item('map-marker','Address','Istanbul/Turkey')
+      +aside_group_item('language', 'Language', 'Turkish (Native)', 'English (Advance)', 'Lithuanian (Basic)','German (Beginner)')
+      +aside_group_item('star', 'Interests','Game of Thrones, ', 'Cinema, Table Tennis, ', 'Travel, Social Coding')
+  div.row
+    ul.accounts
+      +account_item('github', 'https://github.com/ozluy', '_blank')
+      +account_item('linkedin', 'https://linkedin.com/in/ozluy', '_blank')
+      +account_item('envelope', 'mailto:ozluyusuf@gmail.com', '_self')
+      +account_item('medium', 'https://medium.com/@ozluy', '_blank')
+      +account_item('code', 'https://codeschool.com/users/ozluy', '_blank')
+      +account_item('xing', 'https://www.xing.com/profile/Yusuf_Ozlu', '_blank')
+  div.row
+    div.qr-shell
+      img(src='./assets/img/qr.png')
+  div.row
+    div.printer
+      button.print(onclick='window.print()') Print page

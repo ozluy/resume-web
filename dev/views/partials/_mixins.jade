@@ -1,0 +1,45 @@
+mixin aside_group_item(icon, title, ...items )
+  li.about-item
+    div.title
+      i(class='fa fa-'+icon)
+      | #{title}
+    each item in items
+        div.sub #{item}
+
+mixin account_item(icon, link, blank)
+  li
+    a(class='fa fa-'+icon, href=link, target=blank)
+
+mixin compenent_head(icon, title)
+ div.component-head
+   h2.title
+    i(class='fa fa-'+ icon)
+    | #{title}
+
+mixin experience_item(title, ...subs)
+  div.experience-item
+    div.title #{title}
+    each item in subs
+      div.sub #{item}
+
+mixin education_item(title, ...subs)
+  div.education-item
+    div.title #{title}
+    each item in subs
+      div.sub #{item}
+
+mixin skill_item(title, ...subs)
+  div.skill-item
+    div.title #{title}
+    -var count=0, space=' ';
+    -for item in subs
+      -count++
+      -if(count==subs.length)
+        span.sub #{item}
+      -else
+        span.sub #{item},#{space}
+
+mixin summary_item(title, text)
+  div.summary-item
+    div.title #{title}
+    div.sub #{text}

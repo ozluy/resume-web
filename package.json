@@ -1,0 +1,43 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ozluy@bitbucket.org/ozluy/ozluy.me.git"
+  },
+  "keywords": [
+    "Yusuf Özlü",
+    "ozluy",
+    "Front-end Developer",
+    "Computer Scientist",
+    "Full Stack Developer"
+  ],
+  "author": {
+    "name": "Yusuf Özlü",
+    "email": "ozluyusuf@gmail.com",
+    "url": "http://ozluy.me"
+  },
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/ozluy/ozluy.me#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "del": "^2.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-contrib-copy": "^0.1.2",
+    "gulp-express": "^0.3.5",
+    "gulp-image-optimization": "^0.1.3",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-uglify": "^1.5.3"
+  }
+}

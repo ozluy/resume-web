@@ -1,0 +1,43 @@
+@import 'globals';
+@import 'saz';
+
+@media print{
+  body{
+    width: 750px !important;
+  }
+  header{
+    display: none;;
+  }
+  footer{
+    display: none;
+  }
+  .qr-shell{
+    img{
+      @include boxShadow(none);
+    }
+  }
+  aside{
+    top:0 !important;
+    visibility: visible !important;
+    position: static !important;
+    opacity: 1 !important;
+    z-index: auto !important;
+    @include transition(none !important);
+    .avatar-shell{
+      border: solid 5px $color_lightblue;
+      @include boxShadow(none);
+    }
+  }
+  main{
+    .container{
+      width: 100%;
+      float: none;
+      &.summary{
+        display: none;
+      }
+    }
+  }
+  .printer{
+    display: none;
+  }
+}

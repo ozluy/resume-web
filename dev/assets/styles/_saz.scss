@@ -1,0 +1,24 @@
+@mixin boxShadow($val){
+  -webkit-box-shadow: $val;
+  -moz-box-shadow:  $val;
+  box-shadow: $val;
+}
+@mixin transition($val){
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+@mixin transform($val){
+  -moz-transform: $val;
+  -webkit-transform: $val;
+  -o-transform: $val;
+  -ms-transform: $val;
+  transform: $val;
+}
+@mixin calc($property, $val){
+  #{$property}: -webkit-calc(#{$val});
+  #{$property}: -moz-calc(#{$val});
+  #{$property}: calc(#{$val});
+}

@@ -10,7 +10,7 @@
 @media screen and (max-width:600px){
   aside{
     z-index: 2;
-    top:44px;
+    top:0;
     @include transition(all 400ms ease-in-out);
     visibility: hidden;
     position: fixed;
@@ -29,14 +29,32 @@
 
   body{
     width: 100%;
+    overflow-x: hidden;
   }
   main{
     margin-top:44px;
     @include transition(all 400ms ease-in-out);
     width:100%;
-    &.translated{
-      @include transform(translateX(270px));
+    .blockout{
+      @include transition(all 400ms ease-in-out);
     }
+    &.translated{
+      position: relative;
+      @include transform(translateX(270px));
+      .blackout{
+        visibility: visible;;;
+        opacity: 1;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left:0;
+        top:0;
+        bottom: 0;
+        right:0;
+        background-color: rgba(22,22,22,0.9);
+      }
+    }
+
   }
   header{
     z-index: 2;
@@ -44,6 +62,12 @@
     width: 100%;
     top:0;
     left:0;
+    @include transition(all 400ms ease-in-out);
+    width:100%;
+    &.translated{
+      @include transform(translateX(270px));
+      //margin-left: 270px;
+    }
     button.hamburger{
       display: block;
       float: left;

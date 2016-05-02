@@ -6,13 +6,13 @@ my personal website template,  you can use it if you like it
 ##### techs
 - HMTL5
 - CSS3
-- JQuery
+- Vanilla Javascript
 - Responsive Design
 - Font Awesome
+- Google Font (ubuntu)
 - Pug(Jade) templating engine
 - SASS css processor
 - Gulp javascript task runner
-- Some JQuery plugins
 
 #### useage
 ````

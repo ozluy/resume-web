@@ -120,7 +120,7 @@ aside{
     a{
       color:$color_smoothwhite;
       font-size: $medium;
-      @include transition(color 500ms linear);
+      @include transition(color 450ms ease-in-out);
       &:hover{
         color:$color_white;
       }
@@ -169,7 +169,7 @@ main{
     }
   }
   .blackout{
-    @include transition(all 500ms linear);
+    @include transition(all 450ms ease-in-out);
     visibility: hidden;;
     opacity: 0;
   }

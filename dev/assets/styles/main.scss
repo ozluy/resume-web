@@ -19,7 +19,8 @@ body{
   margin:0 auto;
   padding: 0;
   color:$color_smoothwhite;
-  height: 100%;
+  position: relative;
+  height: auto;
 }
 a{
   text-decoration: none;
@@ -49,13 +50,13 @@ header{
   }
 }
 aside{
-  overflow: scroll;
-  //  height: 100%;
+  height: 100%;
   display: block;
-  float: left;
   width:270px;
   background-color: $color_blue;
   padding: 15px;
+  position: absolute;
+  @include calc(height, '100% - 88px');
   .avatar-shell{
     height: 160px;
     width: 160px;
@@ -85,7 +86,7 @@ aside{
       }
       .sub{
         padding: 2px 0;
-        color: $color_lightblue;
+        color: $color_lightblue !important;
         padding-left: 30px;
         font-weight: $light;
       }
@@ -119,7 +120,7 @@ aside{
     a{
       color:$color_smoothwhite;
       font-size: $medium;
-      @include transition(color 400ms linear);
+      @include transition(color 500ms linear);
       &:hover{
         color:$color_white;
       }
@@ -155,6 +156,7 @@ aside{
   }
 }
 main{
+  margin-left: 270px;
   @include calc(width, '100% - 270px');
   float: left;
   display: block;
@@ -165,7 +167,11 @@ main{
     &:first-child{
       padding-top:5px;
     }
-
+  }
+  .blackout{
+    @include transition(all 500ms linear);
+    visibility: hidden;;
+    opacity: 0;
   }
 }
 
@@ -262,6 +268,7 @@ footer{
   content: ' ';
   padding:0 15px;
   width: 100%;
+  background-color: $color_navylight;
   .twin{
     width: 50%;
     float: left;
@@ -277,8 +284,4 @@ footer{
       text-align: right;
     }
   }
-}
-.blackout{
-  visibility: hidden;;
-  opacity: 0;
 }

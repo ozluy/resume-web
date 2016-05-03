@@ -4,6 +4,7 @@
 @media print{
   body{
     width: 750px !important;
+    height: 100%;
   }
   header{
     display: none;;
@@ -17,20 +18,28 @@
     }
   }
   aside{
+    overflow: hidden;
+    padding: 0 !important;
     top:0 !important;
     visibility: visible !important;
-    position: static !important;
+    position: absolute !important;
     opacity: 1 !important;
     z-index: auto !important;
+    height: auto !important;
     @include transition(none !important);
     .avatar-shell{
-      border: solid 5px $color_lightblue;
-      @include boxShadow(none);
+      border: none;
+       @include boxShadow(none);
+       border-radius: 50%;
+       overflow: hidden !important;
+      .avatar{
+        border-radius: 50%;
+      }
     }
   }
   main{
+    margin-left: 0 !important;
     .container{
-      width: 100%;
       float: none;
       &.summary{
         display: none;

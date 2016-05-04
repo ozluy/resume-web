@@ -5,6 +5,8 @@
   body{
     width: 750px !important;
     height: 100%;
+    background-color: $color_white;
+    background-image: none;
   }
   header{
     display: none;;
@@ -19,7 +21,6 @@
   }
   aside{
     overflow: hidden;
-    padding: 0 !important;
     top:0 !important;
     visibility: visible !important;
     position: absolute !important;

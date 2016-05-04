@@ -29,11 +29,11 @@
     @include transition(none !important);
     .avatar-shell{
       border: none;
-       @include boxShadow(none);
-       border-radius: 50%;
-       overflow: hidden !important;
+      @include boxShadow(none);
+      @include borderRadius(50%);
+      overflow: hidden !important;
       .avatar{
-        border-radius: 50%;
+        @include borderRadius(50%);
       }
     }
   }

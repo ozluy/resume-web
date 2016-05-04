@@ -8,7 +8,7 @@ html{
 }
 
 *{
-  box-sizing: border-box;
+  @include boxSizing(border-box);
 }
 body{
   background-color: $color_navy;
@@ -62,7 +62,7 @@ aside{
     width: 160px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 50%;
+    @include borderRadius(50%)
     //border: solid 1px $color_lightblue;
     @include boxShadow(0 4px 8px 2px $color_navy);
   }
@@ -144,7 +144,7 @@ aside{
   button.print{
     width: 150px;
     padding: 15px 0;
-    border-radius: 5px;
+    @include borderRadius(5px)
     outline: none;
     border:solid 1px $color_navy;
     background-color: $color_white;
@@ -169,7 +169,7 @@ main{
     }
   }
   .blackout{
-    @include transition(all 450ms ease-in-out);
+    @include transition(all 450ms ease-out);
     visibility: hidden;;
     opacity: 0;
   }

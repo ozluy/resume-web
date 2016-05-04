@@ -110,10 +110,10 @@
         background-color: $color_white;
         @include transition(all 450ms ease-in-out);
         &:nth-child(odd){
-          border-radius:3px 0 0 3px;
+          @include borderRadius(3px 0 0 3px);
         }
         &:nth-child(even){
-          border-radius:0 3px 3px 0 ;
+          @include borderRadius(0 3px 3px 0);
           left:50%;
         }
         &:nth-child(1){

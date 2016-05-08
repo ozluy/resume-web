@@ -32,12 +32,13 @@ mixin skill_item(title, ...subs)
   div.skill-item
     div.title #{title}
     -var count=0, space=' ';
-    -for item in subs
-      -count++
-      -if(count==subs.length)
-        span.sub #{item}
-      -else
-        span.sub #{item},#{space}
+      span.sub
+        -for item in subs
+          -count++
+          -if(count==subs.length)
+            | #{item}
+          -else
+            | #{item},#{space}
 
 mixin summary_item(title, text)
   div.summary-item

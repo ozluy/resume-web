@@ -2,7 +2,7 @@ include ./_mixins.jade
 aside#left_menu
   div.row
     div.avatar-shell
-      img(class='avatar', src="./assets/img/ozluy.jpg", alt='Yusuf Özlü Image')
+      img(class='avatar', width='160', height='160', src="./assets/img/ozluy.jpg", alt='Yusuf Özlü Image')
   div.row
     ul.about-group
       +aside_group_item('', 'Yusuf Özlü')
@@ -22,7 +22,7 @@ aside#left_menu
       +account_item('xing', 'https://www.xing.com/profile/Yusuf_Ozlu', '_blank')
   div.row
     div.qr-shell
-      img(src='./assets/img/qr.png', alt='QR Vcard')
+      img(width='150', height='150', src='./assets/img/qr.png', alt='QR Vcard')
   div.row
     div.printer
       button.print(onclick='window.print()') Print page

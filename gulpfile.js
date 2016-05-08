@@ -8,7 +8,7 @@ var minifyCSS = require('gulp-minify-css');
 var del = require('del');
 var server = require('gulp-express');
 var pug = require('gulp-jade');
-var imageop = require('gulp-image-optimization');
+var imagemin = require('gulp-image');
 var copy = require('gulp-contrib-copy');
 
 var paths = {
@@ -18,11 +18,11 @@ var paths = {
   styles:'./dev/assets/styles/*.scss',
   html:'./dist/*.html',
   templates:'./dev/views/*.pug',
-  images:['./dev/assets/images/*.png','./dev/assets/images/*.jpg','./dev/assets/images/*.gif','./dev/assets/images/*.jpeg','./dev/assets/images/*.svg'],
-  copy:'./dev/favicon.ico',
+  images:'./dev/assets/images/*.*',
+  copy:['./dev/favicon.ico'],
 };
 gulp.task('clean', function() {
-  return del.sync(['dist/**/*']);
+  return del.sync(['dist/**/*']);//Clean must be sync to avoid from errors
 });
 
 gulp.task('connect', function() {
@@ -38,13 +38,10 @@ gulp.task('copy',['clean'], function() {
   .pipe(copy())
   .pipe(gulp.dest('dist'));
 });
-
-gulp.task('images',['clean'], function(cb) {
-  gulp.src(paths.images).pipe(imageop({
-    optimizationLevel: 1,
-    progressive: true,
-    interlaced: true
-  })).pipe(gulp.dest('dist/assets/img')).on('end', cb).on('error', cb);
+gulp.task('images', function () {
+  gulp.src(paths.images)
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/assets/img'));
 });
 
 gulp.task('html', function () {
@@ -54,13 +51,13 @@ gulp.task('html', function () {
 
 gulp.task('partials', function() {
   return gulp.src(paths.partials)
-  .pipe(pug({ pretty: true }))
+  .pipe(pug())
   .pipe(connect.reload());
 });
 
 gulp.task('templates', function() {
   return gulp.src(paths.templates)
-  .pipe(pug({ pretty: true }))
+  .pipe(pug({ pretty: true })) // do this while developing
   .pipe(gulp.dest('dist'))
   .pipe(connect.reload());
 });
@@ -69,7 +66,7 @@ gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
   .pipe(sourcemaps.init())
   .pipe(uglify())
-  .pipe(concat('bundle.js'))
+  .pipe(concat('bundle.min.js'))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/assets/js'))
   .pipe(connect.reload());
@@ -80,7 +77,7 @@ gulp.task('styles', function() {
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(minifyCSS())
-  .pipe(concat('bundle.css'))
+  .pipe(concat('bundle.min.css'))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/assets/css'))
   .pipe(connect.reload());

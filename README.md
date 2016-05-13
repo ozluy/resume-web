@@ -16,10 +16,15 @@ my personal website template,  you can use it if you like it
 
 #### useage
 ````
-$ npm install
+$ npm install resume-web
 
 ````
-then if you have not installed ***global Gulp*** go and install it globally then run Gulp default task...
+if you have not installed ***global Gulp*** go and install it globally
+```
+$ sudo npm install gulp-cli -g
+```
+
+then run Gulp default task...
 ```
 $ gulp
 ```

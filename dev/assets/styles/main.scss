@@ -276,9 +276,30 @@ footer{
     line-height: 44px;
     font-weight: $light;
     font-size: $small;
+
     a{
       color:$color_white;
       font-weight: $bold;
+    }
+    .developer{
+      .fa-code{
+        color:$color_red;
+      }
+      .hidden-love{
+        opacity: 0;
+        visibility: hidden;
+        @include transition(all 400ms ease);
+
+        .fa-heart{
+          color:$color_red;
+        }
+      }
+      &:hover{
+        .hidden-love{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
     &:last-child{
       text-align: right;

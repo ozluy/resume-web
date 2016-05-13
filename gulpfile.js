@@ -64,21 +64,21 @@ gulp.task('templates', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
-  .pipe(sourcemaps.init())
+  //.pipe(sourcemaps.init())
   .pipe(uglify())
   .pipe(concat('bundle.min.js'))
-  .pipe(sourcemaps.write())
+//  .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/assets/js'))
   .pipe(connect.reload());
 });
 
 gulp.task('styles', function() {
   return gulp.src(paths.styles)
-  .pipe(sourcemaps.init())
+  //.pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(minifyCSS())
   .pipe(concat('bundle.min.css'))
-  .pipe(sourcemaps.write())
+  //.pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/assets/css'))
   .pipe(connect.reload());
 });

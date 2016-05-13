@@ -134,9 +134,20 @@
   }
   footer{
     @include transition(all 450ms ease-in-out);
+    height: 88px;
+padding: 0;
     &.translated{
       @include transform(translateX(270px));
     }
+
+      .twin{
+        width: 100%;
+        text-align: center !important;
+        &:nth-child(2){
+          background-color:$color_navy;
+        }
+
+      }
   }
   .printer{
     display: none;

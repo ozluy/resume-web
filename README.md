@@ -1,5 +1,5 @@
 # resume-web
-demo is my personal website at http://ozluy.me
+demo is my personal website at Github [click for demo](https://ozluy.github.io)
 ##### ozluy.me
 my personal website template,  you can use it if you like it
 
